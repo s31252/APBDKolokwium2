@@ -87,8 +87,6 @@ public class DbService : IDbService
                     .Where(tr => tr.TrackRaceId == trackraceId)
                     .Select(tr => tr.RaceId)
                     .FirstOrDefaultAsync()) ;*/
-
-            
             await _context.RaceParticipations.AddAsync(raceParticipation);
             await _context.SaveChangesAsync();
         }
