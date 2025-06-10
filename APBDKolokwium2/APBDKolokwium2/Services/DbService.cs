@@ -83,10 +83,10 @@ public class DbService : IDbService
                 Position = racer.Position,
             };
 
-            if (racer.FinishTimeInSeconds < _context.TrackRaces
+            /*if (racer.FinishTimeInSeconds < _context.TrackRaces
                     .Where(tr => tr.TrackRaceId == trackraceId)
                     .Select(tr => tr.RaceId)
-                    .FirstOrDefaultAsync()) ;
+                    .FirstOrDefaultAsync()) ;*/
 
             
             await _context.RaceParticipations.AddAsync(raceParticipation);
