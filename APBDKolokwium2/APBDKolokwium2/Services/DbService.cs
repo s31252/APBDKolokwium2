@@ -73,7 +73,9 @@ public class DbService : IDbService
             {
                 throw new NotFoundException("Racer not found");
             }
-                var trackraceId = await _context.TrackRaces.Where(tr=>tr.RaceId == racer.RacerId).Select(tr=>tr.RaceId).FirstOrDefaultAsync()
+
+            var trackraceId = await _context.TrackRaces.Where(tr => tr.RaceId == racer.RacerId).Select(tr => tr.RaceId)
+                .FirstOrDefaultAsync();
             
             var raceParticipation = new RaceParticipation
             {
